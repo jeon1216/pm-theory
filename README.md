@@ -8,6 +8,7 @@ Features
 - Firestore Database
 - Firebase Authentication
 - Firebase Hosting
+- google auth
 
 ## 開発環境起動
 ```bash
@@ -37,3 +38,7 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
 VITE_FIREBASE_MEASUREMENT_ID=
 ```
+
+
+![img_1.png](img_1.png)
+![img.png](img.png)
