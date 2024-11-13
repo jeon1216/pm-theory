@@ -14,7 +14,7 @@ const error = ref(null);
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
-const allowedDomain = "10antz.co.jp";
+const allowedDomain = import.meta.env.VITE_ALLOWED_DOMAIN;
 
 const signInWithGoogle = async () => {
   signInWithPopup(auth, provider)
