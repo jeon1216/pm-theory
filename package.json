@@ -1,0 +1,35 @@
+{
+  "name": "quasar-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "serve": "vite --host --mode localhost",
+    "lint": "eslint lint src",
+    "build-admin": "vite build --mode admin",
+    "build": "vite build --mode production",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.12",
+    "echarts": "^5.5.1",
+    "firebase": "^10.14.0",
+    "papaparse": "^5.4.1",
+    "pinia": "^2.2.2",
+    "pinia-plugin-persistedstate": "^4.1.1",
+    "quasar": "^2.17.0",
+    "vue": "^3.4.37",
+    "vue-echarts": "^7.0.3",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@quasar/vite-plugin": "^1.7.0",
+    "@types/node": "^18.19.53",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "sass": "^1.79.3",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-fonts": "^1.1.1",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.1"
+  }
+}
