@@ -88,6 +88,9 @@ onMounted(() => {
     <q-card class="my-card" flat bordered>
       <q-card-section>
         <div class="text-h6">実施リスト</div>
+        <div class="text-subtitle1">
+          お互いに評価が完了すると結果ボタンが表示されます
+        </div>
       </q-card-section>
 
       <q-markup-table>
