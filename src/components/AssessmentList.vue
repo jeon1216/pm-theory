@@ -4,6 +4,7 @@ import firebaseApp from "@/firebase.js"
 import {getFirestore, collection, query, where, getDocs, deleteDoc, doc} from "firebase/firestore";
 import {useRouter, useRoute} from "vue-router";
 import {useAuthStore} from "@/stores/auth.js";
+import { Notify } from 'quasar'
 
 const useAuth = useAuthStore();
 const router = useRouter();
@@ -72,6 +73,18 @@ const deleteAssessment = async (assessmentId, index) => {
   try {
     await deleteDoc(doc(db, 'selfAssessments', assessmentId));
     userDataList.value.splice(index, 1);
+
+    //requestAssessmentsも削除
+    const requestAssessmentsQuery = query(
+        collection(db, 'requestAssessments'),
+        where('docId', '==', assessmentId),
+    );
+
+    const querySnapshot = await getDocs(requestAssessmentsQuery);
+    for (const docSnap of querySnapshot.docs) {
+      await deleteDoc(docSnap.ref);
+    }
+    Notify.create('削除しました。')
     console.log(`Document ${assessmentId} deleted successfully.`);
   } catch (error) {
     console.error("Error deleting document: ", error);
