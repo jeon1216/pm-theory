@@ -1,4 +1,4 @@
-import {defineConfig} from "vite";
+import {defineConfig, loadEnv} from "vite";
 import vue from "@vitejs/plugin-vue";
 import ViteFonts from 'unplugin-fonts/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -7,6 +7,8 @@ import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
 import {quasar, transformAssetUrls} from "@quasar/vite-plugin";
 import path from "path";
 import {fileURLToPath, URL} from "node:url";
+import removeConsole from 'vite-plugin-remove-console';
+
 
 // https://vitejs.dev/config/
 export default defineConfig(({mode}) => ({
@@ -42,6 +44,7 @@ export default defineConfig(({mode}) => ({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
+    removeConsole(),
   ],
   define: {
     'process.env': {},

@@ -51,7 +51,6 @@ const fetchUserData = async () => {
     userDataArray.sort((a, b) => b.timestamp - a.timestamp);
 
     userDataList.value = userDataArray;
-    console.log('User data: ', userDataList.value);
   } catch (error) {
     console.error('Error fetching user data: ', error);
   }
